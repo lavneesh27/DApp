@@ -3,8 +3,6 @@ using DApp.Entities;
 using DApp.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
 

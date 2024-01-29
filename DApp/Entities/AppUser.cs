@@ -8,7 +8,7 @@ namespace DApp.Entities
         public string UserName { get; set; }
         public byte[] Password { get; set; }
         public byte[] Salt { get; set; }
-
+        
         public DateOnly DateOfBirth { get; set; }
         public string KnownAs { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
@@ -20,9 +20,9 @@ namespace DApp.Entities
         public string Country { get; set; }
         public List<Photo> Photos { get; set; } = new List<Photo>();
 
-        public int GetAge()
-        {
-            return DateOfBirth.CalculateAge();
-        }
+        //public int GetAge()
+        //{
+        //    return DateOfBirth.CalculateAge();
+        //}
     }
 }
