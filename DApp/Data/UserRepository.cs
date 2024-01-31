@@ -17,9 +17,9 @@ namespace DApp.Data
             _mapper = mapper;
         }
 
-        public Task<MemberDto> GetMemberAsync(string username)
+        public async Task<MemberDto> GetMemberAsync(string username)
         {
-            return _dataContext.Users
+            return await  _dataContext.Users
                 .Where(x => x.UserName == username)
                 .ProjectTo<MemberDto>(_mapper.ConfigurationProvider)
                 .SingleOrDefaultAsync();
