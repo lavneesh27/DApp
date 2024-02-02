@@ -1,14 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace DApp.Entities
+namespace DApp.DTOs
 {
-    public class RegisterDto
+    public class LoginDto
     {
         [Required]
         public string Username { get; set; }
         [Required]
-        [StringLength(8, MinimumLength = 4)]
         public string Password { get; set; }
-        
     }
 }

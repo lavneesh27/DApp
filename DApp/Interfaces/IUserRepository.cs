@@ -1,4 +1,5 @@
-﻿using DApp.Entities;
+﻿using DApp.DTOs;
+using DApp.Entities;
 
 namespace DApp.Interfaces
 {

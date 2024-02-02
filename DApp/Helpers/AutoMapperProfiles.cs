@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using DApp.DTOs;
 using DApp.Entities;
 using DApp.Extensions;
 
@@ -13,6 +14,8 @@ namespace DApp.Helpers
                 .ForMember(dest => dest.Age, opt => opt.MapFrom(src => src.DateOfBirth.CalculateAge()));
 
             CreateMap<Photo, PhotoDto>();
+
+            CreateMap<MemberUpdateDto, AppUser>();
         }
     }
 }

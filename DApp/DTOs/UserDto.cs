@@ -1,4 +1,4 @@
-﻿namespace DApp.Entities
+﻿namespace DApp.DTOs
 {
     public class UserDto
     {

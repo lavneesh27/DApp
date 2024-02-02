@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using DApp.DTOs;
 using DApp.Entities;
 using DApp.Interfaces;
 using Microsoft.EntityFrameworkCore;
