@@ -1,4 +1,5 @@
 ﻿using DApp.Data;
+using DApp.Helpers;
 using DApp.Interfaces;
 using DApp.Services;
 using Microsoft.EntityFrameworkCore;
@@ -19,6 +20,8 @@ namespace DApp.Extensions
 
             services.AddScoped<ITokenService, TokenService>();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.Configure<CloudinarySettings>(config.GetSection("CloudinarySettings"));
+            services.AddScoped<IPhotoService, PhotoService>();
 
             return services;
         }

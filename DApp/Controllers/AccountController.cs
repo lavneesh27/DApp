@@ -4,6 +4,7 @@ using DApp.Entities;
 using DApp.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -42,7 +43,7 @@ namespace DApp.Controllers
 
             return new UserDto
             {
-                token = _tokenService.CreateToken(user),
+                Token = _tokenService.CreateToken(user),
                 Username = user.UserName
             };
         }
@@ -50,7 +51,9 @@ namespace DApp.Controllers
         [HttpPost("login")]
         public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
         {
-            var user = await _context.Users.SingleOrDefaultAsync(x => x.UserName == loginDto.Username);
+            var user = await _context.Users
+                .Include(x => x.Photos)
+                .SingleOrDefaultAsync(x => x.UserName == loginDto.Username);
 
             if (user == null)
             {
@@ -66,8 +69,9 @@ namespace DApp.Controllers
             }
             return new UserDto
             {
-                token = _tokenService.CreateToken(user),
-                Username = user.UserName
+                Token = _tokenService.CreateToken(user),
+                Username = user.UserName,
+                PhotoUrl = user.Photos.FirstOrDefault(x => x.IsMain)?.Url
             };
         }
 

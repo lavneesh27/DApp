@@ -24,6 +24,7 @@
     "font-awesome": "^4.7.0",
     "latest-version": "^8.0.0",
     "ng-gallery": "^11.0.0",
+    "ng2-file-upload": "^5.0.0",
     "ngx-bootstrap": "^11.0.2",
     "ngx-spinner": "^16.0.2",
     "ngx-toastr": "^18.0.0",
@@ -33,7 +34,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.0.0",
-    "@angular/cli": "~16.0.0",
+    "@angular/cli": "^16.2.12",
     "@angular/compiler-cli": "^16.0.0",
     "@types/jasmine": "~4.3.0",
     "jasmine-core": "~4.6.0",
